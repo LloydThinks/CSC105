@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Latest compiled and minified Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- Latest compiled and minified Bootstrap JavaScript -->
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
+
+	<!-- Our Custom CSS and JS files -->
+	<link rel="stylesheet" href="./style.css">
+	<script type="text/javascript" src="./script.js"></script>
+
+</head>
+<body onload="createTable()">
+	<h1> CSC 105 Scheduling Application </h1>
+	<hr>
+	<form>
+		<div class="col-xs-3">
+			<input id="entryName" type="text" class="form-control" placeholder="Name">
+		</div>
+		<div class="col-xs-3">
+			<input id="entryHours" type="text" class="form-control" placeholder="Hours">
+		</div>
+		<div class="col-xs-3">
+			<input id="entryWage" type="text" class="form-control" placeholder="Wage">
+		</div>
+		<div>
+			<button onclick="addEntry()" type="button" class="btn btn-primary">Add Entry</button>
+		</div>
+	</form>
+
+	<table id="myTable" class="table table-bordered table-striped">
+		<thead>
+			<tr>
+			<td>Name</td>
+			<td>Hours Worked</td>
+			<td>Wage/h</td>
+		</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+</body>
+</html>
