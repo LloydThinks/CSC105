@@ -122,7 +122,7 @@ The following describes steps to guide you through the exercise to create an hou
 
 #### 3) Compute Amount
 
-* Use a formula to compute the amount owed based on the hourly rate and number of hours worked. 
+* Use a formula to compute the amount owed based on the hourly rate and number of hours worked.
 
 <div style="text-align:center">
     <img src="img/lab1_step-3.png" width=600 />
