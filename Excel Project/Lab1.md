@@ -29,7 +29,7 @@ By the end of the lab show the instructor a completed Excel sheet with appropria
     <img src="img/lab1_result.png" width=600/>
 </div>
 
-Your Excel sheet should meet the following criteria, future week's labs will depend this deliverable:
+Your Excel sheet should meet the following criteria, future week's labs will depend on this deliverable:
 
 * Record the following data points (in order):
     1. Date (in ISO format: yyyy-mm-dd)
@@ -42,10 +42,10 @@ Your Excel sheet should meet the following criteria, future week's labs will dep
 * Use formulas to calculate the the total amount based on the rate and number of hours recorded. 
 * Use formatting (Bold font and borders) to indicate column headers
 * Use colour to indicate related fields.
-    * In future **blue** cells will be for user input, **grey** cells will be calculated. Choose your own colours!
+    * In the future **blue** cells will be for user input, **grey** cells will be calculated. Choose your own colours!
 
 ### Concepts
-The following discusses the key concepts required to complete the exercise described above. If you are framiliar with these concepts feel free to skip to the exercise. 
+The following discusses the key concepts required to complete the exercise described above. If you are familiar with these concepts feel free to skip to the exercise. 
 
 #### Data Entry 
 All data in an Excel workbook is stored within **cells**. We must enter data into the workbook's cells to work with it. The following describes how to enter data into a cell:
