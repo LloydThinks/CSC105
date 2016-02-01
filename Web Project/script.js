@@ -1,15 +1,19 @@
-/* ============================ GLOBAL VARIABLES ============================ */
+/* ============================== INITIAL DATA ============================= */
+var clientData = [
+	['1', 'Alpha Client'],
+	[2, 'Beta Client']
+];
+
+var projectData = [
+	[1, 'Project Alpha', 1, 'Alpha Client', 25, 0, 18, 'No Value'],
+	[2, 'Project Beta', 2, 'Beta Client', 30, 50, 10, 20],
+	[3, 'Project Gamma', 2, 'Beta Client', 40, 20, 10, 50]
+];
+
 var hoursData = [
-	['Name', 'Hours Worked', 'Wage/h'],
 	['Lloyd', 8, 12],
 	['Simon', 8, 20],
 	['Dr. Little', 40, 26]
-];
-
-var clientData = [
-	['Client ID', 'Client Name'],
-	[1, 'Alpha Client'],
-	[2, 'Beta Client']
 ];
 
 /* =============================== FUNCTIONS =============================== */
@@ -22,25 +26,17 @@ var clientData = [
  */
 function addClient() {
 
-	// Grab the table from the HTML page so we can add information to it
-	table = document.getElementById('clientTable').getElementsByTagName('tbody')[0];
-
 	// Grab the data from the input fields on the page
 	var id = document.clientForm.id.value;
 	var name = document.clientForm.name.value;
 
-	// Create the HTML Table elements
-	var row = table.insertRow(0);
-	var cell1 = row.insertCell(0);
-	var cell2 = row.insertCell(1);
-
-	// Fill the HTML Table elements we just created
-	cell1.innerHTML = id;
-	cell2.innerHTML = name;
-
 	// Clear the fields after using the data from them
 	document.clientForm.id.value = '';
 	document.clientForm.name.value = '';
+
+	clientData.push([id, name]);
+
+	populateTable('clientTable', clientData);
 }
 
 /*
@@ -50,34 +46,57 @@ function addClient() {
  */
 function addHours() {
 
-	// Grab the table from the HTML page so we can add information to it
-	table = document.getElementById('hoursTable').getElementsByTagName('tbody')[0];
-
 	// Grab the data from the input fields on the page
 	var name = document.hoursForm.name.value;
 	var hours = document.hoursForm.hours.value;
 	var wage = document.hoursForm.wage.value;
 
-	// Create the HTML Table elements
-	var row = table.insertRow(0);
-	var cell1 = row.insertCell(0);
-	var cell2 = row.insertCell(1);
-	var cell3 = row.insertCell(2);
-
-	// Fill the HTML Table elements we just created
-	cell1.innerHTML = name;
-	cell2.innerHTML = hours;
-	cell3.innerHTML = wage;
-
 	// Clear the fields after using the data from them
 	document.hoursForm.name.value = '';
 	document.hoursForm.hours.value = '';
 	document.hoursForm.wage.value = '';
+
+	hoursData.push([name, hours, wage]);
+
+	populateTable('hoursTable', hoursData);
+}
+
+/*
+ *
+ *
+ *
+ */
+function addProject() {
+
+	// Grab the data from the input fields on the page
+	var projectId = document.projectForm.projectId.value;
+	var name = document.projectForm.name.value;
+	var clientId = document.projectForm.clientId.value;
+	var rate = document.projectForm.rate.value;
+	var hoursEstimated = document.projectForm.hoursEstimated.value;
+
+	// Clear the fields after using the data from them
+	document.projectForm.projectId.value = '';
+	document.projectForm.name.value = '';
+	document.projectForm.clientId.value = '';
+	document.projectForm.rate.value = '';
+	document.projectForm.hoursEstimated.value = '';
+
+	// Find the Client Name using the Client ID
+	var clientName = ''
+	for (var i = 0; i < clientData.length; i++) {
+		if (clientId == clientData[i][0])
+			clientName = clientData[i][1]
+	};
+
+	projectData.push([projectId, name, clientId, clientName, rate, hoursEstimated, '', '']);
+
+	populateTable('projectTable', projectData);
 }
 
 /* ============================ HELPER FUNCTIONS ============================ */
 
-/* createTable(tableName, tableData)
+/* populateTable(tableName, tableData)
  *
  * Purpose: To fill in tables in your HTML code with data you provide
  * 
@@ -85,27 +104,13 @@ function addHours() {
  * 		tableName - The HTML ID of the table you want information in
  * 		tableData - The information you want in the table
  */
-function createTable(tableName, tableData) {
-	// Grab the table from the HTML page so we can add information to it
-	table = document.getElementById(tableName);
-	tableHeader = table.getElementsByTagName('thead')[0]
-	tableBody = table.getElementsByTagName('tbody')[0]
+function populateTable(tableName, tableData) {
 
-	/* ============ Fill in the Header ============ */
-
-	// Create the HTML Table element
-	var header = tableHeader.insertRow(0);
-	for (var j = 0; j < tableData[0].length; j++) {
-		// Create a new row in our table
-		var tempCell = header.insertCell(j);
-		// Fill the HTML Table element using the tableData variable
-		tempCell.innerHTML = tableData[0][j];
-	};
-
-	/* ============= Fill in the body ============= */
+	// Create a new Table Body element to populate with our data
+	var tableBody = document.createElement('tbody');
 
 	// Loop over all entries in tableData
-	for (var i = 1; i < tableData.length; i++) {
+	for (var i = tableData.length - 1; i >= 0; i--) {
 		// Create the HTML Table element
 		var row = tableBody.insertRow(0);
 
@@ -117,16 +122,22 @@ function createTable(tableName, tableData) {
 			// Fill the HTML Table element using the tableData variable
 			tempCell.innerHTML = tableData[i][j];
 		};
-	};	
-}; 
+	};
 
 
+	// Grab the table from the HTML page so we can replace
+	// it's Body element with the new one we just built
+	oldTableBody = document.getElementById(tableName).getElementsByTagName('tbody')[0];
+	oldTableBody.parentNode.replaceChild(tableBody, oldTableBody)
 
 
-/* ================================= TO RUN ================================= */
+}
 
 
-createTable('hoursTable', hoursData);
-createTable('clientTable', clientData);
+/* ========================== TO RUN ON PAGE LOAD ========================== */
+
+populateTable('hoursTable', hoursData);
+populateTable('clientTable', clientData);
+populateTable('projectTable', projectData);
 
 

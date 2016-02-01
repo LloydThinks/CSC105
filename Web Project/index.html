@@ -15,22 +15,19 @@
 	<h1> CSC 105 Time-Tracker </h1>
 	<hr>
 
-	<div class="col-sm-offset-3 col-sm-6 col-xs-12">
+	<div id="clients-container" class="container">
 		<h2> Clients </h2>
-		<form name="clientForm" class="row">
-			<div class="col-xs-3">
-				<input name="id" type="text" class="form-control" placeholder="Client ID">
-			</div>
-			<div class="col-xs-3">
-				<input name="name" type="text" class="form-control" placeholder="Client Name">
-			</div>
-			<div>
-				<button onclick="addClient()" type="button" class="btn btn-primary">Add Entry</button>
-			</div>
+		<form name="clientForm">
+			<input name="id" type="text" class="form-control pull-left" placeholder="Client ID">
+			<input name="name" type="text" class="form-control pull-left" placeholder="Client Name">
+			<button onclick="addClient()" type="button" class="btn btn-primary">Add Client</button>
 		</form>
 		<table id="clientTable" class="table table-bordered table-striped">
 			<thead>
-				<!-- We will fill this with data in our JS file -->
+				<tr>
+					<td> Client ID </td>
+					<td> Client Name </td>
+				</tr>
 			</thead>
 			<tbody>
 				<!-- We will fill this with data in our JS file -->
@@ -38,25 +35,50 @@
 		</table>
 	</div>
 
-	<div class="col-sm-offset-3 col-sm-6 col-xs-12">
+	<div id="projects-container" class="container">
+		<h2> Projects </h2>
+		<form name="projectForm">
+			<input name="projectId" type="text" class="form-control pull-left" placeholder="Project ID">
+			<input name="name" type="text" class="form-control pull-left" placeholder="Project Name">
+			<input name="clientId" type="text" class="form-control pull-left" placeholder="Client ID">
+			<input name="rate" type="text" class="form-control pull-left" placeholder="Rate">
+			<input name="hoursEstimated" type="text" class="form-control pull-left" placeholder="Estimate">
+			<button onclick="addProject()" type="button" class="btn btn-primary">Add Project</button>
+		</form>
+		<table id="projectTable" class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td> Project ID </td>
+					<td> Project Name </td>
+					<td> Client ID </td>
+					<td> Client Name </td>
+					<td> Rate </td>
+					<td> Hours Estimated </td>
+					<td> Hours Total </td>
+					<td> % Complete </td>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- We will fill this with data in our JS file -->
+			</tbody>
+		</table>
+	</div>
+
+	<div id="hours-container" class="container">
 		<h2> Hours </h2>
 		<form name="hoursForm">
-			<div class="col-xs-3">
-				<input name="name" type="text" class="form-control" placeholder="Name">
-			</div>
-			<div class="col-xs-3">
-				<input name="hours" type="text" class="form-control" placeholder="Hours">
-			</div>
-			<div class="col-xs-3">
-				<input name="wage" type="text" class="form-control" placeholder="Wage">
-			</div>
-			<div>
-				<button onclick="addHours()" type="button" class="btn btn-primary">Add Entry</button>
-			</div>
+			<input name="name" type="text" class="form-control pull-left" placeholder="Name">
+			<input name="hours" type="text" class="form-control pull-left" placeholder="Hours">
+			<input name="wage" type="text" class="form-control pull-left" placeholder="Wage">
+			<button onclick="addHours()" type="button" class="btn btn-primary">Add Hours</button>
 		</form>
 		<table id="hoursTable" class="table table-bordered table-striped">
 			<thead>
-				<!-- We will fill this with data in our JS file -->
+				<tr>
+					<td> Name </td>
+					<td> Hours Worked </td>
+					<td> Wage/h </td>
+				</tr>
 			</thead>
 			<tbody>
 				<!-- We will fill this with data in our JS file -->
