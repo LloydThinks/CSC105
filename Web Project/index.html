@@ -1,33 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Time Tracker</title>
+
 	<!-- Latest compiled and minified Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 	<!-- Our Custom CSS and JS files -->
 	<link rel="stylesheet" href="./style.css">
-	<script type="text/javascript" src="./script.js"></script>
+	<script type="text/javascript" src="./script.js" defer></script>
 
 </head>
-<body onload="createTable()">
-	<h1> CSC 105 Time-Tracking Application </h1>
+<body>
+	<h1> CSC 105 Time-Tracker </h1>
 	<hr>
-	<form>
+
+	<h2> Clients </h2>
+	<div>
+		<form name="clientForm" class="row">
+			<div class="col-xs-3">
+				<input name="id" type="text" class="form-control" placeholder="Client ID">
+			</div>
+			<div class="col-xs-3">
+				<input name="name" type="text" class="form-control" placeholder="Client Name">
+			</div>
+		</form>
+		<table id="clientTable" class="table table-bordered table-striped">
+			<thead>
+				<tr>
+				<td>ID</td>
+				<td>Name</td>
+			</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+	</div>
+
+
+
+
+
+
+
+
+	<form name="hoursForm">
 		<div class="col-xs-3">
-			<input id="entryName" type="text" class="form-control" placeholder="Name">
+			<input name="name" type="text" class="form-control" placeholder="Name">
 		</div>
 		<div class="col-xs-3">
-			<input id="entryHours" type="text" class="form-control" placeholder="Hours">
+			<input name="hours" type="text" class="form-control" placeholder="Hours">
 		</div>
 		<div class="col-xs-3">
-			<input id="entryWage" type="text" class="form-control" placeholder="Wage">
+			<input name="wage" type="text" class="form-control" placeholder="Wage">
 		</div>
 		<div>
 			<button onclick="addEntry()" type="button" class="btn btn-primary">Add Entry</button>
 		</div>
 	</form>
 
-	<table id="myTable" class="table table-bordered table-striped">
+	<table id="hoursTable" class="table table-bordered table-striped">
 		<thead>
 			<tr>
 			<td>Name</td>
