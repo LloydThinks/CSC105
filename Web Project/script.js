@@ -1,6 +1,6 @@
 /* ============================== INITIAL DATA ============================= */
 var clientData = [
-	['1', 'Alpha Client'],
+	[1, 'Alpha Client'],
 	[2, 'Beta Client']
 ];
 
@@ -11,9 +11,10 @@ var projectData = [
 ];
 
 var hoursData = [
-	['Lloyd', 8, 12],
-	['Simon', 8, 20],
-	['Dr. Little', 40, 26]
+	["2016-01-02", 2.00, 1, "Project Alpha", 1, "Alpha Client", 25.00, 50.00],
+	["2016-01-03", 4.00, 1, "Project Alpha", 1, "Alpha Client", 25.00, 100.00],
+	["2016-01-04", 2.00, 3, "Project Gamma", 2, "Beta Client", 40.00, 80.00],
+	["2016-01-05", 2.00, 2, "Project Beta", 2, "Beta Client", 30.00, 60.00]
 ];
 
 /* =============================== FUNCTIONS =============================== */
@@ -47,16 +48,30 @@ function addClient() {
 function addHours() {
 
 	// Grab the data from the input fields on the page
-	var name = document.hoursForm.name.value;
+	var date = document.hoursForm.date.value;
 	var hours = document.hoursForm.hours.value;
-	var wage = document.hoursForm.wage.value;
+	var projectId = document.hoursForm.projectId.value;
 
 	// Clear the fields after using the data from them
-	document.hoursForm.name.value = '';
+	document.hoursForm.date.value = '';
 	document.hoursForm.hours.value = '';
-	document.hoursForm.wage.value = '';
+	document.hoursForm.projectId.value = '';
 
-	hoursData.push([name, hours, wage]);
+	// Find the missing fields: projectName, clientId, clientName, rate
+	var projectName = '';
+	var clientId = '';
+	var clientName = '';
+	var rate = '';
+	for (var i = 0; i < projectData.length; i++) {
+		if (projectId == projectData[i][0]) {
+			projectName = projectData[i][1];
+			clientId = projectData[i][2];
+			clientName = projectData[i][3];
+			rate = projectData[i][4];
+		}
+	};
+
+	hoursData.push([date, hours, projectId, projectName, clientId, clientName, rate, amount]);
 
 	populateTable('hoursTable', hoursData);
 }
@@ -85,8 +100,9 @@ function addProject() {
 	// Find the Client Name using the Client ID
 	var clientName = ''
 	for (var i = 0; i < clientData.length; i++) {
-		if (clientId == clientData[i][0])
+		if (clientId == clientData[i][0]) {
 			clientName = clientData[i][1]
+		}
 	};
 
 	projectData.push([projectId, name, clientId, clientName, rate, hoursEstimated, '', '']);
@@ -124,12 +140,10 @@ function populateTable(tableName, tableData) {
 		};
 	};
 
-
 	// Grab the table from the HTML page so we can replace
 	// it's Body element with the new one we just built
 	oldTableBody = document.getElementById(tableName).getElementsByTagName('tbody')[0];
 	oldTableBody.parentNode.replaceChild(tableBody, oldTableBody)
-
 
 }
 

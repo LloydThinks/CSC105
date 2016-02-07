@@ -12,7 +12,11 @@
 
 </head>
 <body>
-	<h1> CSC 105 Time-Tracker </h1>
+	<img src="./img/logo.jpg" class="pull-left">
+	<h1>
+		CSC 105 Time-Tracker
+	</h1>
+	By: Lloyd Montgomery - <a href="https://ca.linkedin.com/in/lloydmontgomery" target="_blank">LinkedIn</a>
 	<hr>
 
 	<div id="clients-container" class="container">
@@ -67,17 +71,22 @@
 	<div id="hours-container" class="container">
 		<h2> Hours </h2>
 		<form name="hoursForm">
-			<input name="name" type="text" class="form-control pull-left" placeholder="Name">
-			<input name="hours" type="text" class="form-control pull-left" placeholder="Hours">
-			<input name="wage" type="text" class="form-control pull-left" placeholder="Wage">
+			<input name="date" type="text" class="form-control pull-left" placeholder="Date">
+			<input name="hours" type="text" class="form-control pull-left" placeholder="Hours Worked">
+			<input name="projectId" type="text" class="form-control pull-left" placeholder="Project ID">
 			<button onclick="addHours()" type="button" class="btn btn-primary">Add Hours</button>
 		</form>
 		<table id="hoursTable" class="table table-bordered table-striped">
 			<thead>
 				<tr>
-					<td> Name </td>
+					<td> Date </td>
 					<td> Hours Worked </td>
-					<td> Wage/h </td>
+					<td> Project ID </td>
+					<td> Project Name </td>
+					<td> Client ID </td>
+					<td> Client Name </td>
+					<td> Rate </td>
+					<td> Amount </td>
 				</tr>
 			</thead>
 			<tbody>
