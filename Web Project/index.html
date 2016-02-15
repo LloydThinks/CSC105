@@ -12,14 +12,24 @@
 
 </head>
 <body>
-	<img src="./img/logo.jpg" class="pull-left">
-	<h1>
-		CSC 105 Time-Tracker
-	</h1>
-	By: Lloyd Montgomery - <a href="https://ca.linkedin.com/in/lloydmontgomery" target="_blank">LinkedIn</a>
-	<hr>
+	<header>
+		<img src="./img/logo.jpg" class="pull-left">
+		<h1>
+			CSC 105 Time-Tracker
+		</h1>
+		By: Lloyd Montgomery - <a href="https://ca.linkedin.com/in/lloydmontgomery" target="_blank">LinkedIn</a>
+		<hr>
+	</header>
 
-	<div id="clients-container" class="container">
+	<section class="container">
+		<article>
+			My name is Lloyd Montgomery. I am a Masters student at the University of Victoria. I have a BSc in Computer Science, and I hope to one day have a PhD as well. My passions include teaching, creating websites, and playing Squash.
+		</article>
+	</section>
+
+	<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/DoOPEPVYAnU" frameborder="0" allowfullscreen></iframe> -->
+
+	<section id="clients-container" class="container">
 		<h2> Clients </h2>
 		<form name="clientForm">
 			<input name="id" type="text" class="form-control pull-left" placeholder="Client ID">
@@ -37,9 +47,9 @@
 				<!-- We will fill this with data in our JS file -->
 			</tbody>
 		</table>
-	</div>
+	</section>
 
-	<div id="projects-container" class="container">
+	<section id="projects-container" class="container">
 		<h2> Projects </h2>
 		<form name="projectForm">
 			<input name="projectId" type="text" class="form-control pull-left" placeholder="Project ID">
@@ -66,9 +76,9 @@
 				<!-- We will fill this with data in our JS file -->
 			</tbody>
 		</table>
-	</div>
+	</section>
 
-	<div id="hours-container" class="container">
+	<section id="hours-container" class="container">
 		<h2> Hours </h2>
 		<form name="hoursForm">
 			<input name="date" type="text" class="form-control pull-left" placeholder="Date">
@@ -93,6 +103,10 @@
 				<!-- We will fill this with data in our JS file -->
 			</tbody>
 		</table>
-	</div>
+	</section>
+
+	<footer>
+		&#169; Lloyd Montgomery
+	</footer>
 </body>
 </html>
