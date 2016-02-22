@@ -9,6 +9,11 @@
 	* a
 	* h1
 	* div, span
+3. HTML5 Tags
+	* Header
+	* Footer
+	* Section
+	* Article
 2. Tables
 	* thead
 	* tbody
@@ -16,7 +21,6 @@
 	* td
 
 ### Goal
-
 The goal of today's lab exercise is to introduce you to Web Development. There are three primary languages that are used on the web, and serve as the basis for most (if not all) websites: HTML, CSS, and JavaScript. We will be learning about HTML and the different tags that it has to begin our website. Over the course of the next three labs we will be building a webpage that mimicks the final product we produced in Excel. Here is a screen shot of the final product after all three labs:
 
 <div style="text-align:center">
@@ -35,19 +39,24 @@ By the end of the lab show the instructor a completed webpage with appropriate s
 Your webpage should meet the following criteria, future week's labs will depend on this deliverable:
 
 1. Have all of the following tags incorporated somewhere in the webpage:
-	* Basic HTML (tags)
-		* Body, Head
-		* Title
-		* img, iFrame (media)
-		* a
-		* h1
-		* div, span
-	* Tables
-		* thead
-		* tbody
-		* tr
-		* td
-2. Enter at least two clients into table, more is better
+
+* Basic HTML (tags)
+	* Body, Head
+	* Title
+	* img, iFrame (media)
+	* a
+	* h1
+	* div, span
+* HTML5 Tags
+	* Header
+	* Footer
+	* Section
+	* Article
+* Tables
+	* thead
+	* tbody
+	* tr
+	* td
 
 ### Concepts
 The following discusses the key concepts required to complete the exercise described above. If you are familiar with these concepts feel free to skip to the exercise. 
@@ -129,7 +138,7 @@ Refresh the webpage in Google Chrome, and you should see the text appear!
 #### 6) Add Proper Structure
 Now that we have made our first tag and inserted some content, we need to set up the basic structure that web pages must use. We will also add some of our own structure using HTML5 Tags.
 
-We currently have just HTML tags, these are necessary to define the entire html page. Now we need to add the [\<head>](http://www.w3schools.com/tags/tag_head.asp) and [\<body>](http://www.w3schools.com/tags/tag_body.asp) tags. The head tag is used for metadata, while the body tag is used for all the actual content of the site. If you want more information about these tags, click the tags above to visit w3schools.com, a great resources for learning about web languages. If you ever have a question, go to Google and type in "w3 html \<the tag you want to know more about>" and you will get all the information you need.
+We currently have just \<html> tags, these are necessary to define the entire HTML page. Now we need to add the [\<head>](http://www.w3schools.com/tags/tag_head.asp) and [\<body>](http://www.w3schools.com/tags/tag_body.asp) tags. The head tag is used for metadata, while the body tag is used for all the actual content of the site. If you want more information about these tags, click the tags above to visit w3schools.com, a great resources for learning about web languages. If you ever have a question, go to Google and type in "w3 html \<the tag you want to know more about>" and you will get all the information you need.
 
 Your webpage should now look like:
 
@@ -159,7 +168,7 @@ Google Chrome:
 </div>
 
 #### 8) Header, Footer, and Section Tags
-To further give our webpage structure, HTML5 now has header, footer, and section tags. The header tag is used to wrap content that is at the top of the page. The footer is for content you would normally find at the bottom of the page. The section tag is used to break about your webpage into pieces, where each section is self-contained. Let's add those to our webpage. They (along with just about everything else) go in between the body tags. For full details on these tags, use Google.
+To further give our webpage structure, HTML5 now has header, footer, and section tags. The header tag is used to wrap content that is at the top of the page. The footer is for content you would normally find at the bottom of the page. The section tag is used to break your webpage into pieces, where each section is self-contained. Let's add those to our webpage. They (along with just about everything else) go in between the body tags. For full details on these tags, use Google.
 
 ```html
 <body>
@@ -178,7 +187,7 @@ To further give our webpage structure, HTML5 now has header, footer, and section
 
 Hopefully these tags make sense given that you have written papers before. The header represents information that introduces content, then you have a number of sections, followed by the footer to close out the content.
 
-Notice the '\&#169;' ? What does the render as when you reload the webpage? This is called an escape sequence/character.
+Notice the '\&#169;' ? What does this render as when you reload the webpage? This is called an escape sequence/character.
  
 #### 9) H1 Tag
 Often enough, you'll want to create a title for a section of your webpage, and there are neat tags to do that: h1, h2, ..., h6. h1 is the most important, whereas h6 is the least important. Try adding the h1 tag to your header tag, and put some content in the h1 tag.
@@ -250,7 +259,7 @@ In HTML5, the article tag is used when there is a self-contained section of cont
 ```
 
 #### 15) Table Tag
-One of the first and most widely-used methods of organizing data on the webpages is in the \<table> tag. The structure of the \<table> tag is a little confusing as first, so I recommend you check out [this link](http://www.w3schools.com/html/html_tables.asp) to learn more about them before proceeding. The final code we expect you to type out and understand is:
+One of the first and most widely-used methods of organizing data on webpages is in the \<table> tag. The structure of the \<table> tag is a little confusing as first, so I recommend you check out [this link](http://www.w3schools.com/html/html_tables.asp) to learn more about them before proceeding. The final code we expect you to type out and understand is:
 
 ```html
 <section>
@@ -298,7 +307,7 @@ Here is an example use of Div and Span in code:
 </section>
 ```
 
-The most important thing to remember about Divs and Spans, is that they are general HTML tags that are used all over the place in webpages. The rest of the tags we went over today and specialized, and have a particular purpose when they are used. Div and Span are meant to be used when no specialized tag can be used for the purpose you want. Just use a Div or Span at that point. We will use these two tags in the future labs.
+The most important thing to remember about Divs and Spans, is that they are general HTML tags that are used all over the place in webpages. The rest of the tags we went over today are specialized, and have a particular purpose when they are used. Div and Span are meant to be used when no specialized tag can be used for the purpose you want. Just use a Div or Span at that point. We will use these two tags in future labs.
 
 #### 17) Submit
 
