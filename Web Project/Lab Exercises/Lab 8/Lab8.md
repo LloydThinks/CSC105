@@ -59,22 +59,66 @@ The lab machines have "Secure File Transer Client" installed, but if you are usi
 5. You are in! 
 
 #### Transfer Files (Lab Machines & Personal Machines)
-Now that we have a connection to the UVic server, we want to **navigate to the `www` folder**, which is what UVic serves up when you navigate to `web.uvic.ca/~<Your Netlink ID>`.
+Now that we have a connection to the UVic server, we want to **navigate to the `www` folder** on the server, which is what UVic serves up when you navigate to `web.uvic.ca/~<Your Netlink ID>`.
 
 The left-hand side of the program is your local machine, the right-hand side is the server. You can drag files from one side to the other, to transfer files from your computer to the server, and vice versa.
 
 ### 2) Add Additional HTML
-Here is the HTML that we need for today's lab. Please write the following code into your HTML file. Copy-pasting probably won't work.
+Here is the HTML that we need for today's lab. Please **write the following code into your HTML file manually**. Copy-pasting probably won't work.
 
 ```html
 <form name="clientForm">
 	<input name="id" class="form-control pull-left" placeholder="Client ID">
 	<input name="name" class="form-control pull-left" placeholder="Client Name">
-	<button onclick="addClient()" class="btn btn-primary"> Add Client </button>
+	<button onclick="" class="btn btn-primary"> Add Client </button>
 </form>
 ```
 
-### 3) 
+### 3) JS and HTML Connection
+When writing a JS file, we need to tell HTML where to find the JS file. This is done in a similar manner to the CSS connection. **In your HTML file**, write the following code into your \<head> tag.
+
+```html
+<head>
+	<script type="text/javascript" src="./script.js" defer></script>
+</head>
+```
+
+### 4) Writing Our First JS
+You can actually execute JS inside HTML, and this is required to make our first action happen when you click the <button>Add Client</button> button. Inside the \<button> tag, notice the attribute `onclick=""`? If we put `alert('Hello')` inside there, we should be able to see an action happen when we click the button. 
+
+```html
+<button onclick="alert('Hello')" class="btn btn-primary"> Add Client </button>
+```
+
+Did you see what popped up? `alert()` is a function that makes a popup happen in your browser, with the text inside the alert displaying in the popup.
+
+### 5) Actually Writing JS
+Now, let's write our first JS, a function. We would like to execute custom JS when someone clicks that button. **Open up your script.js** file and write the following:
+
+```javascript
+function addClient() {
+	alert('Hello');
+}
+```
+
+Now, open up your HTML file and change the `onclick` to call this new function we wrote instead.
+
+```html
+<button onclick="addClient()" class="btn btn-primary"> Add Client </button>
+```
+
+When you click the button, do you see the alert pop up? Try changing the text inside the alert in your JS file, does that new text display when you click the alert?
+
+### 6) 
+
+
+
+
+
+
+
+
+
 
 
 ## Concepts

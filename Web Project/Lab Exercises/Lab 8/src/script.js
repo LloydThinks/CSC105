@@ -1,0 +1,3 @@
+function addClient() {
+	alert('Hello');
+}

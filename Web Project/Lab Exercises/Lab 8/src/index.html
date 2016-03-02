@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 	<link rel="stylesheet" href="./style.css">
+	<script type="text/javascript" src="./script.js" defer></script>
 </head>
 <body>
 	<header>
@@ -31,7 +32,7 @@
 		<form name="clientForm">
 			<input name="id" class="form-control pull-left" placeholder="Client ID">
 			<input name="name" class="form-control pull-left" placeholder="Client Name">
-			<button onclick="alert('HEY')" class="btn btn-primary">Add Client</button>
+			<button onclick="addClient()" class="btn btn-primary">Add Client</button>
 		</form>
 		<table class="table table-bordered table-striped">
 			<thead>
