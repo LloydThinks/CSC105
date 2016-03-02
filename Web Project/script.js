@@ -32,8 +32,10 @@ function addClient() {
 	var name = document.clientForm.name.value;
 
 	// Clear the fields after using the data from them
-	document.clientForm.id.value = '';
+	document.clientF9orm.id.value = '';
 	document.clientForm.name.value = '';
+
+
 
 	clientData.push([id, name]);
 

@@ -1,11 +1,13 @@
 body {
 	margin: 25px;
+	/*background-color: pink;*/
 }
 
 img {
 	margin-right: 10px;
 	width: 75px;
 }
+
 #box-model-example {
     width: 100px;
     height: 100px;
@@ -14,4 +16,19 @@ img {
     border: 10px solid pink;
     padding: 10px;
     background-color: cyan;
+}
+
+section {
+	/*background-color: pink;*/
+	margin-bottom: 10px;
+	/*text-align: center;*/
+}
+
+#biography {
+	/*background-color: blue;*/
+	/*text-align: center;*/
+}
+
+.bold-font {
+	font-weight: bold
 }

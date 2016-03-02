@@ -1,4 +1,4 @@
-# CSC 105 Lab 6: CSS
+# CSC 105 Lab 7: CSS
 
 ## Lab 7 Topics
 
@@ -41,6 +41,16 @@ The following section discusses the key concepts required to complete the exerci
 
 ### CSS
 CSS can be thought of as a set of instructions as to how things should look. Webpages can exist without CSS, they just look plain. In fact, HTML existed before CSS, and they had special styling they did inside the HTML directly, which we do not do anymore. So, how do we use CSS to style our webpages? Well it starts by connecting the HTML to the CSS, then we tell the CSS what we are changing on the HTML page, and finally we tell the HTML exactly how to look. These steps are explained in detail below.
+
+### CSS & HTML Connection
+When writing a CSS file, we need to tell HTML where to find the CSS file that we are writing our styles in. This is done through a simple \<link> tag in the \<head> tag of the HTML page:
+
+```html
+<head>
+	<link rel="stylesheet" href="./style.css">
+</head>
+```
+The CSS file MUST BE right next to the HTML file given the above code. If you wish to store your CSS file somewhere else, you'll have to adjust the 'href' above to match the location of your CSS file.
 
 ### Styling
 CSS is really just a set of styles that are being applied to HTML. Each one disconnected from the others, listed one after the other. This is done by listing a tag name, id, or class, followed by the styles you want applied to it. Below we have listed the 'body' tag as the target tag to style, and we have chosen to make the background color pink.
@@ -208,7 +218,8 @@ Bootstrap is a library stored online. You access its functionality by adding the
 
 ```html
 <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/
+	bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 ```
 
