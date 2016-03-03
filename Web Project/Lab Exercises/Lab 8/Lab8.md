@@ -15,23 +15,17 @@
 	* Writing to HTML
 
 ## Goal
-The goal of today's lab exercise is to introduce you to JavaScript. JavaScript (JS) is the first of the three languages we have learned in this class that is most like *normal* programming languages you learn about in Computer Science. HTML and CSS are special languages built for a particular purpose, however, JS is much like Java, C, Python, etc. in that it has constructs such as: variables, conditionals, loops, and functions. Today's lab will only touch on variables and functions, and in next week's lab we will learn about conditionals and loops.
+The goal of today's lab exercise is to introduce you to JavaScript. JavaScript (JS) is the first of the three languages we have learned in this class that is most like *normal* programming languages you learn about in Computer Science. JS allows you to do read inputs, do computations, send instructions to other languages, ouput content, and even build entire web applications -- which is different than just a web page. HTML and CSS are special languages built for a particular purpose, however, JS is much like Java, C, Python, etc. in that it has constructs such as: variables, conditionals, loops, and functions. Today's lab will only touch on variables and functions, and in next week's lab we will learn about conditionals and loops.
 
 ## Deliverable
 
-By the end of the lab show the instructor a completed webpage, the result should be similar to: 
-
-<div style="text-align:center">
-    <img src="img/lab7-product.png">
-</div>
-
-In addition to having the above elements displaying on the webpage, it also must *FINISH THIS SECTION*
+By the end of the lab show the instructor a completed webpage, the result should be similar to last week, only now the Javascript you have written will allow information to be transfered from inputs to the table we have.
 
 ## Exercise
 
 The following section describes steps to guide you through the exercise to integrate JS into your webpage, allowing for a simple movement of text from inputs, to a different place in your HTML page. Next week will use JS for something more powerful, but just as an introduction we will begin simple. Before we begin, however, we are going to show you how to utilize your FREE UVic domain hosting.
 
-### 1) Open File Transfer Program
+### 1) Make Your Website Live!
 The lab machines have "Secure File Transer Client" installed, but if you are using your own machine you'll have to download FileZilla. The set of steps to follow are slightly different for either program, but they both have the same general flow: connect to the UVic server, and transfer your files.
 
 #### Secure File Transer Client (Lab Machines)
@@ -63,16 +57,21 @@ Now that we have a connection to the UVic server, we want to **navigate to the `
 
 The left-hand side of the program is your local machine, the right-hand side is the server. You can drag files from one side to the other, to transfer files from your computer to the server, and vice versa.
 
+#### Transfer Existing Website Files to the UVic Server
+If you transfer the files you have from last week's labs to the UVic Server, you can see your website live! Transfer your Lab7 folder into the `www` folder on the server, go to your web browser, and go to the URL: `web.uvic.ca/~<Your Netlink ID>`. For example, if your UVic Netlink ID is `sassycat@uvic.ca`, then your web hosting can be reached by navigating to `web.uvic.ca/~sassycat`.
+
 ### 2) Add Additional HTML
 Here is the HTML that we need for today's lab. Please **write the following code into your HTML file manually**. Copy-pasting probably won't work.
 
 ```html
 <form name="clientForm">
 	<input name="id" class="form-control pull-left" placeholder="Client ID">
-	<input name="name" class="form-control pull-left" placeholder="Client Name">
-	<button onclick="" class="btn btn-primary"> Add Client </button>
+	<input class="form-control pull-left" placeholder="Client Name">
+	<button onclick="" type="button" class="btn btn-primary"> Add Client </button>
 </form>
 ```
+
+Side note: the inputs we just put on the screen are really wide, use CSS to make them a set width (100px?).
 
 ### 3) JS and HTML Connection
 When writing a JS file, we need to tell HTML where to find the JS file. This is done in a similar manner to the CSS connection. **In your HTML file**, write the following code into your \<head> tag.
@@ -107,231 +106,146 @@ Now, open up your HTML file and change the `onclick` to call this new function w
 <button onclick="addClient()" class="btn btn-primary"> Add Client </button>
 ```
 
-When you click the button, do you see the alert pop up? Try changing the text inside the alert in your JS file, does that new text display when you click the alert?
+When you click the button, do you see the alert pop up? Try changing the text inside the alert in your JS file, does that new text display when you click the button? The function we just wrote in JS is being called (activated) by the button press. Now let's do more than just call an `alert()` in this new function we wrote.
 
-### 6) 
+### 6) Printing to the Console
+An important aspect of developing in a language such as JS is to know what information is being used inside your function. Before teaching you variables, let's learn how to pring values in our code. Write the following code so that your function looks as follows:
 
-
-
-
-
-
-
-
-
-
-
-## Concepts
-The following section discusses the key concepts required to complete the exercise described above. If you are familiar with these concepts feel free to skip to the exercises. 
-
-### CSS
-CSS can be thought of as a set of instructions as to how things should look. Webpages can exist without CSS, they just look plain. In fact, HTML existed before CSS, and they had special styling they did inside the HTML directly, which we do not do anymore. So, how do we use CSS to style our webpages? Well it starts by connecting the HTML to the CSS, then we tell the CSS what we are changing on the HTML page, and finally we tell the HTML exactly how to look. These steps are explained in detail below.
-
-### CSS & HTML Connection
-When writing a CSS file, we need to tell HTML where to find the CSS file that we are writing our styles in. This is done through a simple \<link> tag in the \<head> tag of the HTML page:
-
-```html
-<head>
-	<link rel="stylesheet" href="./style.css">
-</head>
-```
-The CSS file MUST BE right next to the HTML file given the above code. If you wish to store your CSS file somewhere else, you'll have to adjust the 'href' above to match the location of your CSS file.
-
-### Styling
-CSS is really just a set of styles that are being applied to HTML. Each one disconnected from the others, listed one after the other. This is done by listing a tag name, id, or class, followed by the styles you want applied to it. Below we have listed the 'body' tag as the target tag to style, and we have chosen to make the background color pink.
-
-```css
-body {
-	background-color: pink;
+```javascript
+function addClient() {
+	// alert('Hello');
+	console.log("Hello World!");
 }
 ```
 
-### Selectors
-CSS [Selectors](http://www.w3schools.com/cssref/css_selectors.asp) are the way in which we connect our CSS to the HTML we have written. As mentioned earlier, there are three main kinds of selectors: tag names, ids, and classes. You can list any tag name and apply styles to it. For example,
+Notice two things: 
 
-```css
-section {
-	background-color: red;
-}
-```
-This will make all \<section> tags in your HTML page appear red. This kind of styling is often too broad for what we want though, so use this sparingly. Instead, it is important to get familiar with ids and classes.
+* the `alert('Hello')` we had before is now greyed out. This is called "commenting out" code. By adding two forward slashes in front of any code, it will not be executed; the web browser will not see or run code that is commented out.
+* `console.log()` is a function that will print anything you put in the parentheses. For instance, we have coded `console.log("Hello World!")` which will print "Hello World" to the console. But where is the console? We have to go find it in the browser:
+	* Right-click in the browser: `Inspect`
+	* A window in your browser or outside your browser should appear with a lot of buttons you can click. We want to select: `Console`
+	* Reload your browser window, and click the <button>Add Client</button> button
+	* Check the console, do you see "Hello World"? You should
 
-### IDs and Classes
-The first step in using IDs and Classes is to put them in our HTML page. This is actually quite simple. Here is an example of using an ID in a section tag:
-
-```html
-<section id="random">
-	This is a small section in which we have text.
-</section>
-```
-Notice that the ```id="random"``` is inside the section tag, before the '>'. That is important. Also, the actual name that we give the id is important, because that is what we use to link it to our CSS. Here is an example CSS style being applied to the ID: random.
-
-```css
-#random {
-	background-color: blue;
-}
-```
-Notice that when mentioning an ID, you have to put a '#' before the name of the ID. The syntax for classes is very similar. You just have to say 'class' instead of 'id' and use a '.' in the CSS intead of a '#'.
-
-```html
-<section class="big-font">
-	This is a small section in which we have BIGGER text.
-</section>
-```
-```css
-.big-font {
-	font-size: 24px;
-}
-```
-Both IDs and Classes can be used interchangeably, so which one do you use? In general, IDs should be used when you intend to only use that style once, for one ID. However, some times we want our style to be applied to multiple tags in our HTML page, and this is where we use a class. For example, the class above: 'big-font' can reasonably be used in multiple places, so it fits as a class.
-
-### Styles
-There are hundreds of different styles you can apply to your webpage, so we are not going to list them all. It is your job to use Google when you want to know how to do a particular style. How do you change the font color? Google it: '[CSS font color](https://www.google.ca/search?q=CSS+font+color)'
-
-### Box Model
-The last thing that needs to be understood before you can go on and experiment with CSS is the [CSS Box Model](http://www.w3schools.com/css/css_boxmodel.asp). "All HTML elements can be considered as boxes. In CSS, the term 'box model' is used when talking about design and layout. The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content."
-
-<div style="text-align:center">
-    <img src="img/css-box-model.png">
-</div>
-
-The following example should hopefully give you a good idea of how these things come together to create the Box Model:
-
-```html
-This text comes before the box.
-<div id="box-model-example">
-	Pretty Colors!
-</div>
-This text comes after the box.
-```
-```css
-#box-model-example {
-	width: 100px;
-	height: 100px;
 	
-	margin: 25px;
-	border: 10px solid pink;
-	padding: 10px;
-	background-color: cyan;
-}
-```
-<div style="text-align:center">
-    <img src="img/box-model-example.png">
-</div>
+### 7) Variables
+Now that we can print values in our code, let's print something other than a string, let's print a variable. What is a variable? Good question. A variable in Computer Science has the same concept as the variables you know from math: variables are letters (or words) that store values inside them. E.g. X = 5, so X + 2 = ? Hopefully you guessed 7. Let's see how variables work in JS:
 
-Play with those numbers and colors until you feel like you have a good understanding of the Box Model. Notice the margin and how it pushes the text around it away? We can't color margins, they exist just to give us space. Same thing goes for padding: it is used to give us space inside elements.
-
-### Bootstrap
-People have been doing webdev for many years, and they are quite good at it. It is important to learn the basics yourself, but it's also nice to use work that other people have done. One of the most commonly used libraries is called "Bootstrap". By using Bootstrap, we can get a lot of pre-built CSS styles that look really good, and are easy to use. Learning all of the things available to you in Bootstrap is quite the task in and of itself, but worth it since you can build webpages in hours instead of days.
-
-The basic premise: add classes to your HTML page that Bootstrap has defined and styled for you, and suddenly your HTML has fancy styling. We will go over a few Bootstrap styles today in lab: container, pull-left / pull-right, and tables. Just know that there are plenty more out there to use, and if you do get into webdev it is a good idea to spend some time learning about them.
-
-So how do we use Bootstrap exactly? Well exactly like we used our own CSS page: Add a \<link> tag in the \<head> tag, and then put pre-defined classes into your HTML. Don't worry about the \<link> tag, that is given to you. Remember that table we created last time? It looks pretty boring. Let's add a Bootstrap class to our HTML and see just how easy and good looking it is.
-
-#### HTML for Bootstrap
-```html
-<table class="table table-bordered table-striped">
-</table>
+```javascript
+var x = 5;
 ```
 
-#### Original Table &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bootstrap Table
-<div style="text-align:center;">
-    <img src="img/table-plain.png" style="width:250px;">
-    <img src="img/table-bootstrap.png" style="width:300px;">
-</div>
+Pretty simple right? All we have to do is put `var` before we create a variable. What happens if you print `x`?
 
-The classes we added: ``` table table-bordered table-striped ``` are Bootstrap defined classes that give us a nice looking table, and all we had to do was add a couple classes to our HTML page. There is no CSS that we had to write to make this happen. How would you know what classes to add to make this happpen? You don't. You have to either already know what to write, or Google it. For the purposes of this class, you are not expected to know any Bootstrap classes. However, since they are easy to use and look nice, we will use a couple of them to make our webpage look good.
-
-## Exercise 
-The following section describes steps to guide you through the exercise to create an HTML page. However, given the in-depth explanations given about each concept above, the exercises are not going to give as much explanation as prior labs. If you are confused as to how to complete an exercise, you may have to read some of the concepts above in more depth.
-
-### 1) Open a Text Editing Program
-The lab machines have a few text-editing programs installed:
-
-* Notepad++
-* TextPad
-* jEdit
-
-You are welcome to use any text editing program you want. I personally use and recommend [SublimeText](https://www.sublimetext.com/), but you'll have to install that on your own machine in your own time if you wish to use it.
-
-### 2) Create a CSS File
-Open up the completed Lab 6 folder from last week, and create a new file in the same directory as the "index.html" file, name this file: "style.css"
-
-
-### 3) Open the HTML file in Google Chrome
-
-1. Right-click on your "index.html" file on your Desktop
-2. Open with -> Google Chrome
-
-You should see the webpage we created in Lab 6.
-
-
-### 4) Link the CSS File to our HTML file
-Your HTML page will not know the CSS file exists unless you tell it. Go to your HTML file, and add a \<link> tag between the \<head> tags.
-
-```html
-<head>
-	<link rel="stylesheet" href="./style.css">
-</head>
+```javascript
+var x = 5;
+console.log(x);
 ```
-We will not know if this worked until we have something in our CSS file to style our webpage. Go to the next step to add our first CSS style.
 
-### 5) Style the Webpage
-Add your first style to the webpage to see if it is working properly. Let's add a margin to the \<body> tag so everything isn't so squished agaist the side of the browser.
+Reload the browser and click the <button>Add Client</button> button and see what prints in the console. Hopefully 5! Now try adding 2 to x in the print statement:
 
-```css
-body {
-	margin: 25px;
-}
+
+```javascript
+var x = 5;
+console.log(x + 2);
 ```
-Refresh the webpage in Google Chrome, and you should see all of the text move away from the edge of the browser.
 
-### 6) Artist License Go!
-Now that you know how to style a webpage, practice! Add all of the following styles to your webpage in different ways. There is no correct answer to this step, just include at least one of each of the following styles:
+Does it print 7? If not, go back and read the instructions again, it should.
 
-* margin
-* border (with color)
-* padding
-* height
-* width
-* background color
-* text color
+Variables can contain Numbers, Strings, and Lists (as well as other things we won't go over in this course). Numbers and Strings should be pretty obvious, and we won't go over Lists until next week. Here is an example of Numbers and Strings:
 
+```javascript
+var x = 5;  // Number
+var y = "Hello" // String
 
-### 7) Add the Bootstrap Link Tag
-Bootstrap is a library stored online. You access its functionality by adding the following line to your head section:
+console.log(x);
+console.log(y);
+```
+
+Lastly, it is important to know that variables can be more than just letters, they can -- and should -- be words, particularly words that describe what the represent. For example:
+
+```javascript
+var age = 24
+var eyeColour = "Green"
+var bio = "My name is Lloyd Montgomery"
+```
+
+Now let's try something more complicated: Create a variable called `y` that stores `4`, add `x` and `y` together and store the result in `z`, then print `z`.
+
+### 8) Accessing HTML
+HTML has the capability to take user input through \<form> tags with \<input> tags; however, this is only useful if there is Javascript to take that information, and do something with it. To start, let's see if we can take the information out of the two \<input> tags above.
+
+The entire HTML page can be thought of as a giant object, with many variables stored through it. Begin the process of finding the information inside the input tags by writing the following code:
+
+```javascript
+console.log(document);
+```
+
+The `document` variable contains the entire HTML page inside of it (Yes, really). Running the above code shows you the entire page, which isn't very useful. Try refining the results:
+
+```javascript
+console.log(document.clientForm);
+```
+
+The `clientForm` we added to the end of document finds the \<form> tag we pasted in earlier. We are slowly getting closer to finding the information stored inside those pesky \<input> tags. The next step is to use the `name` attribute inside the \<input> tags. Notice what the `name` of the first \<input> tag is: `id`
+
+```javascript
+console.log(document.clientForm.id);
+```
+
+This returns the information we want, but it's still wrapped up in the HTML returned from the HTML page. To access the information stored in the actual \<input> tag, end the line with `value`.
+
+```javascript
+console.log(document.clientForm.id.value);
+```
+
+So now, if you type something into the "Client ID" input and click <button>Add Client</button>, you should see the console print that same value! So now that we can grab information from the HTML page, let's store that value in a variable:
+
+```javascript
+var clientID = document.clientForm.id.value;
+console.log(clientID);
+```
+
+Your job is to add the HTML attribute `name` for the other \<input> tag, and write the JS to grab that information out of the HTML page.
+
+### 9) Writing to HTML
+First step in writing to the HTML page is to think of a place we want this information to appear. Let's add some important information to our table so we can write to it:
 
 ```html
-<head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/
-	bootstrap/3.3.6/css/bootstrap.min.css">
-</head>
+<tbody>
+	<tr>
+		<td id="firstID">1</td>
+		<td>Alpha Client</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>Beta Client</td>
+	</tr>
+</tbody>
 ```
 
-### 8) Add Bootstrap Elements
-#### Container
-Let's space out our webpage even more with nice Bootstrap classes. The class "container" is used to specify high-level elements that need space around them. Add the class ```container``` to all \<section> tags, reload the webpage, and see what happens.
+This `id` is necessary for the next step. We want to write the `clientID` back into the table cell where we have the `id="firstID"`:
 
-#### Tables
-Let's make our tables look nice. Add the classes  ``` table table-bordered table-striped ``` to the \<table> tag and reload the webpage.
-
-#### Pull-left / Pull-right
-Often times, we want elements on our webpage to always be left, or always be right, and Bootstrap has a solution for that: Pull. If you add the class "pull-left" to a tag, that element will float on the left side of the screen, allowing other elements to wrap around it. Add the class ``` pull-left ``` to the \<img> tag and see what happens to the content around it.
-
-### 9) Remove the Inline CSS
-Last time we added an image and inside the \<img> tag we added ``` style="width:75px"; ``` however, this is not proper as all styling should be inside the CSS page. Delete this line so your HTML looks similar to this:
-
-```html
-<img src="./img/logo.jpg" class="pull-left">
+```javascript
+document.getElementById('firstID').innerHTML = clientID;
 ```
-You'll notice that if you reload your webpage the image becomes very large, which is not good.. So now you need to style that \<img> tag with your CSS file so that it is a smaller size. Once you have done that, go and remove all of the styling inside the HTML file, and move them to the CSS file (if any remain).
+
+The above line of code is quite complicated, but if you look at it long enough, breaking down the individual pieces, it makes sense. Let me break it down for you:
+
+* We know what `document` means, it is the entire HTML page
+* `getElementById('firstID')` grabs the HTML tag where the `id` is set to "firstID"
+* `innerHTML` is the content inside the tag found in the previous step
+* `= clientID` sets the `innerHTML` from the previous step to the "clientID" we saved earlier
+
+Although everything in the above line of code has been explained and should make sense, does it seem intuitive? To someone who has never programmed before, it won't be. All you can do is practice and hopefully memorize these techniques. If you don't program for a couple months, you are likely going to forget the *exact* syntax, but that is why we have Google, to make our lives easier.
+
+So, before you forget everything explained above, write the code in the HTML and JS file to transfer information from the `Client Name` input to the first client name cell of the table.
 
 ### 10) Make Pretty!
-At this point, you should have a pretty good understanding of how CSS works. Now comes the painful part of webdev: being an artist. Webdev is an art form in that there is not a defined right answer to "how should this webpage look?"; therefore, it is up to you and your artist license to decide how to style your webpage. For example, after step 8 the title "CSC 105 Time-Tracker" got awfully close to the picture we have, which in MY opinion looks bad. So if this was my webpage, I would add a little margin to the \<img> tag to push the text away. Try ``` margin-right: 10px; ```. Keep adding changes, while keeping in mind that [CSS can be frustrating and eat away all of your time..](http://imgur.com/gallery/Q3cUg29) Have fun!
-
+We have added new content to our webpage, play with the CSS to make it look good. Try adding some space around the inputs so they don't run into each other. Change the colour of the button if you want!
 
 ### 11) Submit
 
 * Show your lab instructor your working webpage. 
-* Save the Lab7 folder for next week. 
+* Save the Lab8 folder for next week. 
     * **Do not save your work on the lab computer's hard drive.** It will be deleted by the system. 

@@ -32,8 +32,11 @@
 		<form name="clientForm">
 			<input name="id" class="form-control pull-left" placeholder="Client ID">
 			<input name="name" class="form-control pull-left" placeholder="Client Name">
-			<button onclick="addClient()" class="btn btn-primary">Add Client</button>
+			<button onclick="addClient()" type="button" class="btn btn-primary">Add Client</button>
 		</form>
+		<div>
+			Placeholder Text!
+		</div>
 		<table class="table table-bordered table-striped">
 			<thead>
 				<tr>
@@ -43,8 +46,8 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td>1</td>
-					<td>Alpha Client</td>
+					<td id="firstID">1</td>
+					<td id="firstName">Alpha Client</td>
 				</tr>
 				<tr>
 					<td>2</td>
