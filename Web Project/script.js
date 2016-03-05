@@ -35,8 +35,6 @@ function addClient() {
 	document.clientF9orm.id.value = '';
 	document.clientForm.name.value = '';
 
-
-
 	clientData.push([id, name]);
 
 	populateTable('clientTable', clientData);

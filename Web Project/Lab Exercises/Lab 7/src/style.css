@@ -1,6 +1,5 @@
 body {
 	margin: 25px;
-	/*background-color: pink;*/
 }
 
 img {
@@ -8,25 +7,14 @@ img {
 	width: 75px;
 }
 
-#box-model-example {
-    width: 100px;
-    height: 100px;
-    
-    margin: 25px;
-    border: 10px solid pink;
-    padding: 10px;
-    background-color: cyan;
-}
-
 section {
-	/*background-color: pink;*/
 	margin-bottom: 10px;
-	/*text-align: center;*/
 }
 
 #biography {
-	/*background-color: blue;*/
-	/*text-align: center;*/
+	background-color: #f8f8f8;
+	padding: 10px;
+	border-radius: 5px;
 }
 
 .bold-font {
