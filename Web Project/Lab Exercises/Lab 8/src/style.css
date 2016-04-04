@@ -1,0 +1,22 @@
+body {
+	margin: 25px;
+}
+
+img {
+	margin-right: 10px;
+	width: 75px;
+}
+
+#box-model-example {
+    width: 100px;
+    height: 100px;
+    
+    margin: 25px;
+    border: 10px solid pink;
+    padding: 10px;
+    background-color: cyan;
+}
+
+#clients-container input {
+	width: 125px !important;
+}

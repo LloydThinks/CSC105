@@ -1,43 +1,112 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Time Tracker</title>
+
 	<!-- Latest compiled and minified Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 	<!-- Our Custom CSS and JS files -->
 	<link rel="stylesheet" href="./style.css">
-	<script type="text/javascript" src="./script.js"></script>
+	<script type="text/javascript" src="./script.js" defer></script>
 
 </head>
-<body onload="createTable()">
-	<h1> CSC 105 Time-Tracking Application </h1>
-	<hr>
-	<form>
-		<div class="col-xs-3">
-			<input id="entryName" type="text" class="form-control" placeholder="Name">
-		</div>
-		<div class="col-xs-3">
-			<input id="entryHours" type="text" class="form-control" placeholder="Hours">
-		</div>
-		<div class="col-xs-3">
-			<input id="entryWage" type="text" class="form-control" placeholder="Wage">
-		</div>
-		<div>
-			<button onclick="addEntry()" type="button" class="btn btn-primary">Add Entry</button>
-		</div>
-	</form>
+<body>
+	<header>
+		<img src="./img/logo.jpg" class="">
+		<h1>
+			CSC 105 Time-Tracker
+		</h1>
+		By: Lloyd Montgomery - <a href="https://ca.linkedin.com/in/lloydmontgomery" target="_blank">LinkedIn</a>
+		<hr>
+	</header>
 
-	<table id="myTable" class="table table-bordered table-striped">
-		<thead>
-			<tr>
-			<td>Name</td>
-			<td>Hours Worked</td>
-			<td>Wage/h</td>
-		</tr>
-		</thead>
-		<tbody>
-			
-		</tbody>
-	</table>
+	<section class="container">
+		<article>
+			My name is Lloyd Montgomery. I am a Masters student at the University of Victoria. I have a BSc in Computer Science, and I hope to one day have a PhD as well. My passions include teaching, creating websites, and playing Squash.
+		</article>
+	</section>
+
+	<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/DoOPEPVYAnU" frameborder="0" allowfullscreen></iframe> -->
+
+	<section id="clients-container" class="container">
+		<h2> Clients </h2>
+		<form name="clientForm">
+			<input name="id" type="text" class="form-control pull-left" placeholder="Client ID">
+			<input name="name" type="text" class="form-control pull-left" placeholder="Client Name">
+			<button onclick="addClient()" type="button" class="btn btn-primary">Add Client</button>
+		</form>
+		<table id="clientTable" class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td> Client ID </td>
+					<td> Client Name </td>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- We will fill this with data in our JS file -->
+			</tbody>
+		</table>
+	</section>
+
+	<section id="projects-container" class="container">
+		<h2> Projects </h2>
+		<form name="projectForm">
+			<input name="projectId" type="text" class="form-control pull-left" placeholder="Project ID">
+			<input name="name" type="text" class="form-control pull-left" placeholder="Project Name">
+			<input name="clientId" type="text" class="form-control pull-left" placeholder="Client ID">
+			<input name="rate" type="text" class="form-control pull-left" placeholder="Rate">
+			<input name="hoursEstimated" type="text" class="form-control pull-left" placeholder="Estimate">
+			<button onclick="addProject()" type="button" class="btn btn-primary">Add Project</button>
+		</form>
+		<table id="projectTable" class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td> Project ID </td>
+					<td> Project Name </td>
+					<td> Client ID </td>
+					<td> Client Name </td>
+					<td> Rate </td>
+					<td> Hours Estimated </td>
+					<td> Hours Total </td>
+					<td> % Complete </td>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- We will fill this with data in our JS file -->
+			</tbody>
+		</table>
+	</section>
+
+	<section id="hours-container" class="container">
+		<h2> Hours </h2>
+		<form name="hoursForm">
+			<input name="date" type="text" class="form-control pull-left" placeholder="Date">
+			<input name="hours" type="text" class="form-control pull-left" placeholder="Hours Worked">
+			<input name="projectId" type="text" class="form-control pull-left" placeholder="Project ID">
+			<button onclick="addHours()" type="button" class="btn btn-primary">Add Hours</button>
+		</form>
+		<table id="hoursTable" class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td> Date </td>
+					<td> Hours Worked </td>
+					<td> Project ID </td>
+					<td> Project Name </td>
+					<td> Client ID </td>
+					<td> Client Name </td>
+					<td> Rate </td>
+					<td> Amount </td>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- We will fill this with data in our JS file -->
+			</tbody>
+		</table>
+	</section>
+
+	<footer>
+		&#169; Lloyd Montgomery
+	</footer>
 </body>
 </html>

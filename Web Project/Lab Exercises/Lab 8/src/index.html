@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Time Tracker</title>
+
+	<!-- Latest compiled and minified Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="./style.css">
+	<script type="text/javascript" src="./script.js" defer></script>
+</head>
+<body>
+	<header>
+		<img src="./img/logo.jpg" class="pull-left">
+		<h1>
+			CSC 105 Time-Tracker
+		</h1>
+		By: Lloyd Montgomery - <a href="https://ca.linkedin.com/in/lloydmontgomery" target="_blank">LinkedIn</a>
+		<hr>
+	</header>
+	<section class="container">
+		<article>
+			My name is <span style="font-weight: bold">Lloyd Montgomery</span>. 
+			I am a Masters student at the University of Victoria. I have a BSc 
+			in Computer Science, and I hope to one day have a PhD as well. My 
+			passions include teaching, creating websites, and playing Squash.
+		</article>
+	</section>
+
+	<section id="clients-container" class="container">
+		<h2> Clients </h2>
+		<form name="clientForm">
+			<input name="id" class="form-control pull-left" placeholder="Client ID">
+			<input name="name" class="form-control pull-left" placeholder="Client Name">
+			<button onclick="addClient()" type="button" class="btn btn-primary">Add Client</button>
+		</form>
+		<div>
+			Placeholder Text!
+		</div>
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td> Client ID </td>
+					<td> Client Name </td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td id="firstID">1</td>
+					<td id="firstName">Alpha Client</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Beta Client</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<footer>
+		&#169; Lloyd Montgomery
+	</footer>
+</body>
+</html>

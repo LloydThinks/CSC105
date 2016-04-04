@@ -2,6 +2,31 @@ body {
 	margin: 25px;
 }
 
+img {
+	margin-right: 10px;
+	width: 75px;
+}
+
 form {
-	margin-bottom: 25px;
+	margin-bottom: 10px;
+}
+
+input {
+	margin: 0 5px 5px 0;
+}
+
+button {
+	margin: 0 5px 5px 0;
+}
+
+#clients-container input {
+	width: 125px !important;
+}
+
+#projects-container input {
+	width: 100px !important;
+}
+
+#hours-container input {
+	width: 125px !important;
 }
