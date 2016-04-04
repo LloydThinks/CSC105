@@ -1,15 +1,8 @@
-## CSC 105 Lab 2: Microsoft Excel
+## CSC 105 Lab 4: Microsoft Access
 
-### Lab 1 Topics
+### Lab 4 Topics
 
-* Absolute v. relative referencing
-* Referencing between sheets
-* Formulas:
-    * [SUM](https://support.office.com/en-us/article/SUM-function-043e1c7d-7726-4e80-8f32-07b23e057f89)
-    * [IF](https://support.office.com/en-us/article/IF-function-69aed7c9-4e8a-4755-a9bc-aa8bbff73be2)
-    * [SUMIF](https://support.office.com/en-us/article/SUMIF-function-169b8c99-c05c-4483-a712-1697a653039b)
-    * [VLOOKUP](https://support.office.com/en-us/article/VLOOKUP-function-0bbc8083-26fe-4963-8ab8-93a18ad188a1)
-
+* 
 ### Goal
 
 The goal of today's lab is to build on the time tracking exercise you started last lab. In this lab we will add sheets to allow you to manage clients and projects independently of the number of hours worked. 
@@ -131,7 +124,7 @@ The `SUMIF` function only includes values in the sum if some criteria is met. Th
 * The condition to evaluate.
 * The range to actually sum values from.
 
-In the following example the following only values in column B with an "a" in column A are considered in the sum.  
+In the following example only values in column B with an "a" in column A are considered in the sum.  
 
 <div style="text-align:center">
     <img src="img/lab2_sumif-2.png" width=220/> &nbsp &nbsp &nbsp
@@ -207,7 +200,7 @@ Create the following headers:
 Enter some sample data, your sheet may look something like: 
 
 <div style="text-align:center">
-    <img src="img/lab2_result-project.png" width=600/>
+    <img src="img/lab2_result-project-2.png" width=600/>
 </div>
 
 ##### 2.2) Link Projects to Clients
@@ -218,7 +211,7 @@ Use the `VLOOKUP` function to have the Client Name field auto populate based on 
 
 Create a formula to calculate the percent complete for each project. Use an `IF` function to make sure only valid division occurs, for example: 
 
-`=IF( AND( F2<>0, ISNUMBER(F2) ), "No Estimate", G2/F2 ) `
+`=IF( AND( F2<>0, ISNUMBER(F2) ), G2/F2, "No Estimate" ) `
 
 Use the [AND](https://support.office.com/en-us/article/AND-function-5f19b2e8-e1df-4408-897a-ce285a19e9d9) and [ISNUMBER](https://support.office.com/en-us/article/ISNUMBER-Function-DAX-02D5FA9A-C0DB-4209-9147-480547E8B5C0) functions if the `IF`. 
 
